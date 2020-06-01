@@ -7,7 +7,7 @@
 variable "account_profile" {
   type        = string
   description = "Profile permissions."
-  default = "desktop-sdlc-preprod"
+  default = "default"
 }
 
 variable "region" {
