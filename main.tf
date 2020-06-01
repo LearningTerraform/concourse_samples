@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "base_dynamo_table" {
-  name           = "a${var.ApplicationAssetInsightId}-${var.EnvironmentType}-${var.table_name}"
+  name           = "a-${var.EnvironmentType}-${var.table_name}"
   billing_mode   = var.billing_mode
   read_capacity  = var.read_attribute
   write_capacity = var.write_attribute
