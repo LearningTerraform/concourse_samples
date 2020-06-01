@@ -13,14 +13,14 @@ variable "account_profile" {
 variable "region" {
   type    = string
   description = "Region that we wish to deploy into."
-  default="us-east-1"C:\Users\U6080180\OneDrive - Refinitiv\straada\tempov1\page_express\modules\aws-tf-dynamodb\variables.tf
+  default="us-east-1"
 }
 
  
 variable "EnvironmentType" {
   type        = string
   description = "Type of the environment. Allowed values are dev,alpha,beta and prod"
-  default=dev
+  default="dev"
 }
 
 
@@ -55,20 +55,24 @@ variable "write_attribute"{
 
 variable "attribute_type"{
  description = "Attribute type, which must be a scalar type: S, N, or B for (S)tring, (N)umber or (B)inary data"
+ default = "S"
 }
 
 
 variable "table_name"{
  description = "Table name which has to be created, ex: aaa-cache" 
+   default = "aaa-cache"
 }
 
 variable "table_attribute"{
  description = "attribute to use as the hash (partition) key, Partition Key , ex : UserID" 
+  default = "userid"
 }
 
 
 variable "enable_point_in_time_recovery" {
     description = "Enable DynamoDB point in time recovery"
+    default = "false"
 }
 
 
