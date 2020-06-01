@@ -1,9 +1,19 @@
-module "base_dynamo_table" {
-  source = "../../base_module/"    
-  table_name = "bbb-cache"
-  table_attribute = "Users"
-  attribute_type = "S"
-  enable_point_in_time_recovery = "false"
-  region="ap-south-1"
-  EnvironmentType = "dev"
+resource "aws_dynamodb_table" "base_dynamo_table" {
+  name           = "a${var.ApplicationAssetInsightId}-${var.EnvironmentType}-${var.table_name}"
+  billing_mode   = var.billing_mode
+  read_capacity  = var.read_attribute
+  write_capacity = var.write_attribute
+  hash_key       = var.table_attribute
+
+  attribute {
+    name = var.table_attribute
+    type = var.attribute_type
+  }
+
+ point_in_time_recovery {
+    enabled = var.enable_point_in_time_recovery
+  }
+
+  tags = local.tags
+
 }
