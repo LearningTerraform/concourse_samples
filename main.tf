@@ -1,3 +1,13 @@
+terraform {
+
+        backend "s3" {
+        bucket = "test-vijith-terraform-learning"
+        key = "concourse/terraform.tfstate"
+        region =  "us-east-1"
+        }
+}
+
+
 resource "aws_dynamodb_table" "base_dynamo_table" {
   name           = "a-${var.EnvironmentType}-${var.table_name}"
   billing_mode   = var.billing_mode
