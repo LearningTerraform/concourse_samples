@@ -1,8 +1,7 @@
 terraform {
 
         backend "s3" {
-        bucket = "test-vijith-terraform-learning"
-        key = "concourse/terraform.tfstate"
+        bucket = "concoursetestprabhu191"
         region =  "us-east-1"
         }
 }
