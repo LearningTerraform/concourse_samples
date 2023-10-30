@@ -2,6 +2,7 @@ terraform {
 
         backend "s3" {
         bucket = "concoursetestprabhu191"
+        key = "concourse/terraform.tfstate"
         region =  "us-east-1"
         }
 }
